@@ -1,0 +1,33 @@
+1.
+git init
+git remote add origin URL
+git add .
+git commit -m "v1"
+git config --global user.email " "
+git push origin master
+git status
+git log
+git reset --hard ID
+
+2.
+git checkout -b branch1
+git add .
+git commit -m "b1"
+git switch master
+git merge branch1
+git diff master
+git merge
+
+3.
+javac add.java
+java add
+
+python add.py
+4.
+FROM openjdk
+WORKDIR /app
+COPY . /app
+RUN javac Add.java
+CMD ["java","Add"]
+docker build -t img1 .
+docker run img1
