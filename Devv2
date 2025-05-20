@@ -1,0 +1,99 @@
+Program 1
+
+class add{
+    public static void main(String[] args){
+        int a=5,b=3,c;
+        c=a+b;
+        System.out.println(c);
+    }
+}
+
+javac add.java
+java add
+
+FROM openjdk
+WORKDIR /app
+COPY . /app
+RUN javac add.java
+CMD ["java","add"]
+
+For Modification
+
+print("Hello")
+
+FROM python
+WORKDIR /app
+COPY . /app
+RUN python sample.py
+CMD ["python", "sample.py"]
+
+python sample.py
+
+docker build -t img3 .
+docker run img3
+
+docker login 
+docker images
+docker tag img3:latest preethambasavaraj/app
+docker push preethambasavaraj/app
+docker pull preethambasavaraj/app
+
+
+
+
+
+
+Program 2
+
+
+open maven project- internal
+maven-archetype-quickstart 1.1 
+
+group id : vvceeeee
+: commmmmmmm
+
+create a folder in maven project and name it as JSON
+In JSON create a file called student.json
+
+{ "firstname":"Preetham" ,
+"lastname":"Basavaraj" }
+
+Now in pom.xml
+
+<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+
+Now in src/test create new class name ReadJSON
+
+package vvcee.comm;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+public class ReadJSON {
+	public static void main(String[] args) throws IOException, ParseException {
+		JSONParser jsonparser = new JSONParser();
+		FileReader reader = new FileReader(".\\JSON\\student.json");
+		Object obj = jsonparser.parse(reader);
+		JSONObject empjsonobj = (JSONObject)obj;
+		
+		String fname = (String) empjsonobj.get("firstname");
+		String lname = (String) empjsonobj.get("lastname");
+		
+		System.out.println("first name:"+fname);
+		System.out.println("Last name:"+lname);
+		}
+}
+run as java application
+
+Modification
+
+In Google 
+maven repository
+open first link and type simple, open google one Json.simple
